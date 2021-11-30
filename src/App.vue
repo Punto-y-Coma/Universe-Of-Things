@@ -1,8 +1,27 @@
 <template>
   <v-app>
-    <v-app-bar app style="
-    background: linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);
-  " dark>
+    <v-app-bar
+      app
+      style="background: linear-gradient(to right, #ffaf7b, #d76d77, #3a1c71)"
+      dark
+    >
+    <v-div class="d-flex column">
+      <div class="d-flex align-center">
+        <v-img
+          alt="Disney"
+          class="shrink mr-6"
+          contain
+          src="./assets/disney-logo-white.png"
+          transition="scale-transition"
+          width="100"
+        />
+      </div>
+      <div class="d-flex row">
+        <p>Personajes</p>
+        <p>Favoritos</p>
+      </div>
+    </v-div>
+
       <!-- <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -21,9 +40,9 @@
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
           width="100"
         />
-      </div> -->
+      </div> 
 
-      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>-->
 
       <v-btn
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
@@ -39,15 +58,14 @@
       <router-view />
     </v-main>
 
-
-    <v-footer app style="
-    background: linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);
-  " dark height="50px">
-
+    <v-footer
+      app
+      style="background: linear-gradient(to right, #ffaf7b, #d76d77, #3a1c71)"
+      dark
+      height="50px"
+    >
       <v-spacer></v-spacer>
-
     </v-footer>
-
   </v-app>
 </template>
 

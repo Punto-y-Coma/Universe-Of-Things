@@ -1,7 +1,9 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
+    <v-app-bar app style="
+    background: linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);
+  " dark>
+      <!-- <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
@@ -19,7 +21,7 @@
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
           width="100"
         />
-      </div>
+      </div> -->
 
       <v-spacer></v-spacer>
 
@@ -28,7 +30,7 @@
         target="_blank"
         text
       >
-        <span class="mr-2">PRUEBA DE QUE ESTO FUNCIONA</span>
+        <span class="mr-2">BUSCAR PERSONAJE</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
@@ -36,6 +38,16 @@
     <v-main>
       <router-view />
     </v-main>
+
+
+    <v-footer app style="
+    background: linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);
+  " dark height="50px">
+
+      <v-spacer></v-spacer>
+
+    </v-footer>
+
   </v-app>
 </template>
 

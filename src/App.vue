@@ -15,7 +15,7 @@
     <v-main>
       <v-container>
         <v-row>
-          <v-col v-for="n in 24" :key="n" cols="3">
+          <v-col v-for="n in 10" :key="n" cols="3">
             <v-card class="mx-auto" max-width="344" min-height="350px">
               <v-img
                 src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"

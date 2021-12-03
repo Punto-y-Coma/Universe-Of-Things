@@ -19,18 +19,10 @@
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
           width="100"
         />
+        <v-btn elevation="2"></v-btn>
       </div>
 
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">PRUEBA DE QUE ESTO FUNCIONA</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -46,5 +38,21 @@ export default {
   data: () => ({
     //
   }),
+  mounted() {},
+  methods: {
+    loadDisneyAPI() {
+      var url = "https://api.npms.io/v2/search?q=vue";
+      return fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          this.products = data;
+          console.log(this.products);
+        });
+      // fetch(url)
+      //   .then((response) => response.json())
+      //   .then((data) => (this.totalVuePackages = data.total));
+      // console.log("testestestestestestestest");
+    },
+  },
 };
 </script>

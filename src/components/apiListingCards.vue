@@ -15,7 +15,8 @@
     <v-main>
       <v-container>
         <v-row>
-          <v-col v>
+          <!-- <v-col v-for="n in 10" :key="n" cols="3"> -->
+          <v-col>
             <v-card class="mx-auto" max-width="344" min-height="350px">
               <v-img :src="getImageURL" height="200px"></v-img>
 

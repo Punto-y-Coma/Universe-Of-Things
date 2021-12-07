@@ -6,6 +6,7 @@
           <apiListingCards
             :title="character.name"
             :imageUrl="character.imageUrl"
+            :movies="character.films"
           />
         </v-col>
       </v-row>

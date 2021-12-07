@@ -87,5 +87,21 @@ export default {
   data: () => ({
     //
   }),
+  mounted() {},
+  methods: {
+    loadDisneyAPI() {
+      var url = "https://api.npms.io/v2/search?q=vue";
+      return fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          this.products = data;
+          console.log(this.products);
+        });
+      // fetch(url)
+      //   .then((response) => response.json())
+      //   .then((data) => (this.totalVuePackages = data.total));
+      // console.log("testestestestestestestest");
+    },
+  },
 };
 </script>

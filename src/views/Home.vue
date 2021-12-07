@@ -1,15 +1,44 @@
 <template>
-  <hello-world />
+  <v-app id="inspire">
+    <v-container>
+      <v-row>
+        <v-col v-for="character in characters" :key="character.id" cols="6">
+          <apiListingCards
+            :title="character.name"
+            :imageUrl="character.imageUrl"
+            :movies="character.films"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from "../components/HelloWorld";
+import apiListingCards from "../components/apiListingCards";
 
 export default {
   name: "Home",
-
+  data() {
+    return {
+      characters: [],
+    };
+  },
   components: {
-    HelloWorld,
+    apiListingCards,
+  },
+  methods: {
+    loadDisneyAPI() {
+      var url = "https://api.disneyapi.dev/characters";
+      return fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          this.characters = data.data;
+        });
+    },
+  },
+  created() {
+    this.loadDisneyAPI();
   },
 };
 </script>

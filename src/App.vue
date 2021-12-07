@@ -1,62 +1,82 @@
 <template>
-  <v-app id="inspire">
-    <v-app-bar app shrink-on-scroll>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+  <v-app>
+    <!--  <v-app-bar
+      app
+      style="background: linear-gradient(to right, #ffaf7b, #d76d77, #3a1c71)"
+      dark
+      class="d-flex justify-center"
+      height="100px"
+    > -->
 
-      <v-toolbar-title>Application</v-toolbar-title>
+    <v-container
+      style="background: linear-gradient(to right, #480848, #29215b)"
+      fluid
+    >
+      <v-layout wrap>
+        <v-flex class="d-flex justify-center" xs12>
+          <v-img
+            alt="Disney"
+            class="shrink"
+            src="./assets/disney-logo-white.png"
+            width="120"
+          />
+        </v-flex>
+        <v-flex xs4 lg5></v-flex>
+        <v-flex class="white--text d-flex justify-center align-center" xs4 lg2>
+          <v-flex d-flex justify-end mr-2> Personajes </v-flex>
+          <v-flex d-flex justify-center> | </v-flex>
+          <v-flex d-flex justify-start ml-2> Favoritos </v-flex>
+        </v-flex>
+        <v-flex class="d-flex justify-end" xs4 lg5>
+          <v-btn
+            href="https://github.com/vuetifyjs/vuetify/releases/latest"
+            target="_blank"
+            text
+          >
+            <v-icon color="white">mdi-open-in-new</v-icon>
+          </v-btn>
+        </v-flex>
+      </v-layout>
+    </v-container>
 
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <!-- </v-app-bar> -->
 
     <v-main>
-      <v-container>
-        <v-row>
-          <v-col v-for="n in 10" :key="n" cols="3">
-            <v-card class="mx-auto" max-width="344" min-height="350px">
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                height="200px"
-              ></v-img>
-
-              <v-card-title> Top western road trips </v-card-title>
-
-              <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
-
-              <v-card-actions>
-                <v-btn color="orange lighten-2" text> Explore </v-btn>
-
-                <v-spacer></v-spacer>
-
-                <v-btn icon @click="show = !show">
-                  <v-icon>{{
-                    show ? "mdi-chevron-up" : "mdi-chevron-down"
-                  }}</v-icon>
-                </v-btn>
-              </v-card-actions>
-
-              <v-expand-transition>
-                <div v-show="show">
-                  <v-divider></v-divider>
-
-                  <v-card-text>
-                    I'm a thing. But, like most politicians, he promised more
-                    than he could deliver. You won't have time for sleeping,
-                    soldier, not with all the bed making you'll be doing. Then
-                    we'll go with that data file! Hey, you add a one and two
-                    zeros to that or we walk! You're going to do his laundry?
-                    I've got to find a way to escape.
-                  </v-card-text>
-                </div>
-              </v-expand-transition>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
+      <router-view />
     </v-main>
+
+    <v-footer
+      app
+      style="background: linear-gradient(to right, #29215b, #480848)"
+      height="50px"
+    >
+      <v-layout>
+        <v-flex
+          class="d-flex justify-start align-center"
+          text-caption
+          white--text
+          xs6
+          sm4
+          md2
+          lg2
+        >
+          <v-flex> Terms of use </v-flex>
+          <v-flex> | </v-flex>
+          <v-flex> Contact </v-flex>
+        </v-flex>
+        <v-flex
+          class="d-flex justify-end align-center"
+          text-caption
+          white--text
+          xs6
+          sm8
+          md10
+          lg10
+        >
+          Disney
+        </v-flex>
+      </v-layout>
+    </v-footer>
   </v-app>
 </template>
 
@@ -65,7 +85,23 @@ export default {
   name: "App",
 
   data: () => ({
-    show: false,
+    //
   }),
+  mounted() {},
+  methods: {
+    loadDisneyAPI() {
+      var url = "https://api.npms.io/v2/search?q=vue";
+      return fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          this.products = data;
+          console.log(this.products);
+        });
+      // fetch(url)
+      //   .then((response) => response.json())
+      //   .then((data) => (this.totalVuePackages = data.total));
+      // console.log("testestestestestestestest");
+    },
+  },
 };
 </script>

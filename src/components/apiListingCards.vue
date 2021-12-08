@@ -11,6 +11,7 @@
       height="200"
       min-width="163"
       max-width="243"
+      contain
     ></v-img>
 
     <!--     <v-img
@@ -22,7 +23,6 @@
     ></v-img> -->
 
     <v-card-title> {{ title }} </v-card-title>
-    <v-card-subtitle> {{ imageUrl }} </v-card-subtitle>
 
     <!-- <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
 

@@ -1,16 +1,10 @@
 <template>
   <v-app>
-    <!--  <v-app-bar
-      app
-      style="background: linear-gradient(to right, #ffaf7b, #d76d77, #3a1c71)"
-      dark
-      class="d-flex justify-center"
-      height="100px"
-    > -->
-
-    <v-container
+    <v-app-bar
       style="background: linear-gradient(to right, #480848, #29215b)"
       fluid
+      app
+      height="100"
     >
       <v-layout wrap>
         <v-flex class="d-flex justify-center" xs12>
@@ -24,7 +18,7 @@
         <v-flex xs4 lg5></v-flex>
         <v-flex class="white--text d-flex justify-center align-center" xs4 lg2>
           <v-flex d-flex justify-end mr-2> Personajes </v-flex>
-          <v-flex d-flex justify-center> | </v-flex>
+          <div>|</div>
           <v-flex d-flex justify-start ml-2> Favoritos </v-flex>
         </v-flex>
         <v-flex class="d-flex justify-end" xs4 lg5>
@@ -33,13 +27,11 @@
             target="_blank"
             text
           >
-            <v-icon color="white">mdi-open-in-new</v-icon>
+            <v-icon color="white">mdi-magnify</v-icon>
           </v-btn>
         </v-flex>
       </v-layout>
-    </v-container>
-
-    <!-- </v-app-bar> -->
+    </v-app-bar>
 
     <v-main>
       <router-view />
@@ -56,24 +48,18 @@
           text-caption
           white--text
           xs6
-          sm4
-          md2
-          lg2
         >
-          <v-flex> Terms of use </v-flex>
-          <v-flex> | </v-flex>
-          <v-flex> Contact </v-flex>
+          <div class="mx-2">Terms of use</div>
+          <div>|</div>
+          <div class="mx-2">Contact</div>
         </v-flex>
         <v-flex
           class="d-flex justify-end align-center"
           text-caption
           white--text
           xs6
-          sm8
-          md10
-          lg10
         >
-          Disney
+          © Disney
         </v-flex>
       </v-layout>
     </v-footer>

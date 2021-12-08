@@ -1,8 +1,8 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="inspire" style="background: #212121">
     <v-container>
       <v-row>
-        <v-col v-for="character in characters" :key="character.id" cols="6">
+        <v-col v-for="character in characters" :key="character.id" xs6 md4 lg3>
           <apiListingCards
             :title="character.name"
             :imageUrl="character.imageUrl"

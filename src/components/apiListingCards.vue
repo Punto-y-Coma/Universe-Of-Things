@@ -57,9 +57,13 @@
             <v-list-item v-if="checkArrayLenght(movies)">
               <v-list-item-content>
                 <v-list-item-title>Movies:</v-list-item-title>
-                <v-list-item-subtitle v-for="movie of movies" :key="movie">{{
-                  movie
-                }}</v-list-item-subtitle>
+                <v-list-item-subtitle
+                  v-for="movie of movies"
+                  :key="movie"
+                  style="font-size: 0.9em"
+                  class="text-wrap"
+                  >- {{ movie }}</v-list-item-subtitle
+                >
               </v-list-item-content>
             </v-list-item>
             <v-list-item v-if="checkArrayLenght(shortFilms)">
@@ -68,16 +72,22 @@
                 <v-list-item-subtitle
                   v-for="shortFilm of shortFilms"
                   :key="shortFilm"
-                  >{{ shortFilm }}</v-list-item-subtitle
+                  style="font-size: 0.9em"
+                  class="text-wrap"
+                  >- {{ shortFilm }}</v-list-item-subtitle
                 >
               </v-list-item-content>
             </v-list-item>
             <v-list-item v-if="checkArrayLenght(tvShows)">
               <v-list-item-content>
                 <v-list-item-title>TV Shows:</v-list-item-title>
-                <v-list-item-subtitle v-for="tvShow of tvShows" :key="tvShow">{{
-                  tvShow
-                }}</v-list-item-subtitle>
+                <v-list-item-subtitle
+                  v-for="tvShow of tvShows"
+                  :key="tvShow"
+                  style="font-size: 0.9em"
+                  class="text-wrap"
+                  >- {{ tvShow }}</v-list-item-subtitle
+                >
               </v-list-item-content>
             </v-list-item>
             <v-list-item v-if="checkArrayLenght(videoGames)">
@@ -86,7 +96,9 @@
                 <v-list-item-subtitle
                   v-for="videoGame of videoGames"
                   :key="videoGame"
-                  >{{ videoGame }}</v-list-item-subtitle
+                  style="font-size: 0.9em"
+                  class="text-wrap"
+                  >- {{ videoGame }}</v-list-item-subtitle
                 >
               </v-list-item-content>
             </v-list-item>
@@ -96,7 +108,9 @@
                 <v-list-item-subtitle
                   v-for="parkAttraction of parkAttractions"
                   :key="parkAttraction"
-                  >{{ parkAttraction }}</v-list-item-subtitle
+                  style="font-size: 0.9em"
+                  class="text-wrap"
+                  >- {{ parkAttraction }}</v-list-item-subtitle
                 >
               </v-list-item-content>
             </v-list-item>

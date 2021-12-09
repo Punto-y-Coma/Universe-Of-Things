@@ -7,24 +7,28 @@
     elevation="15"
   >
     <v-img
-      src="https://static.wikia.nocookie.net/disney/images/6/61/Olu_main.png"
-      height="200"
-      min-width="163"
-      max-width="243"
-      contain
-    ></v-img>
-
-    <!--     <v-img
-      src="https://images.cdn2.buscalibre.com/fit-in/360x360/0a/2b/0a2b5b51d9042a90bc7503b918eb58bf.jpg"
+      :src="fixImageUrl()"
       lazy-src="https://yt3.ggpht.com/ytc/AKedOLTvdyXx_BMV1NliJxVqzs5kzn6XtGmYlEXb1_rmIA=s900-c-k-c0x00ffffff-no-rj"
       height="200"
       min-width="163"
       max-width="243"
-    ></v-img> -->
+      position="top"
+    ></v-img>
 
-    <v-card-title> {{ title }} </v-card-title>
+    <v-card-title
+      style="
+        font-size: 1em;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 204px;
+      "
+      class="text-no-wrap"
+    >
+      {{ title }}
+    </v-card-title>
 
-    <!-- <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle> -->
+    <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
 
     <v-card-actions>
       <v-btn color="orange lighten-2" text> More info </v-btn>
@@ -58,6 +62,13 @@ export default {
   }),
   components: {
     apiListingMoreInfo,
+  },
+  methods: {
+    fixImageUrl() {
+      var indexPng = this.imageUrl.search("/revision");
+      var stringFixed = this.imageUrl.slice(0, indexPng);
+      return stringFixed;
+    },
   },
   props: {
     title: {

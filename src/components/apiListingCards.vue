@@ -23,15 +23,22 @@
     </v-card-title>
 
     <v-card-actions>
-      <v-btn color="orange lighten-2" text> More info </v-btn>
+      <v-btn @click="show = !show" color="orange lighten-2" text>
+        More info
+      </v-btn>
 
       <v-spacer></v-spacer>
 
       <v-btn icon @click="show = !show">
         <v-icon>{{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon>
       </v-btn>
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
+
+      <v-btn icon @click="favourite = !favourite">
+        <v-icon>{{
+          favourite
+            ? "mdi-heart background-color: red-lighten-2 color: red"
+            : "mdi-heart-outline"
+        }}</v-icon>
       </v-btn>
     </v-card-actions>
     <v-expand-transition>
@@ -105,6 +112,7 @@
 export default {
   data: () => ({
     show: false,
+    favourite: false,
     // return: {
     //   movies: [],
     //   shortFilms: [],

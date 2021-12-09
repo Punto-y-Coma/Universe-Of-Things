@@ -34,10 +34,8 @@
       </v-btn>
 
       <v-btn icon @click="favourite = !favourite">
-        <v-icon>{{
-          favourite
-            ? "mdi-heart background-color: red-lighten-2 color: red"
-            : "mdi-heart-outline"
+        <v-icon color="red">{{
+          favourite ? "mdi-heart" : "mdi-heart-outline"
         }}</v-icon>
       </v-btn>
     </v-card-actions>

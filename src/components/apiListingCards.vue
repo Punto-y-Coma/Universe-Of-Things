@@ -23,7 +23,13 @@
         <v-divider></v-divider>
 
         <v-card-text>
-          <apiListingMoreInfo :movies="movies" />
+          <apiListingMoreInfo
+            :movies="movies"
+            :shortFilms="shortFilms"
+            :tvShows="tvShows"
+            :videoGames="videoGames"
+            :parkAttractions="parkAttractions"
+          />
         </v-card-text>
       </div>
     </v-expand-transition>
@@ -35,6 +41,13 @@ import apiListingMoreInfo from "../components/apiListingMoreInfo";
 export default {
   data: () => ({
     show: false,
+    return: {
+      movies: [],
+      shortFilms: [],
+      tvShows: [],
+      videoGames: [],
+      parkAttractions: [],
+    },
   }),
   components: {
     apiListingMoreInfo,
@@ -50,7 +63,18 @@ export default {
     },
     movies: {
       type: Array,
-      required: false,
+    },
+    shortFilms: {
+      type: Array,
+    },
+    tvShows: {
+      type: Array,
+    },
+    videoGames: {
+      type: Array,
+    },
+    parkAttractions: {
+      type: Array,
     },
   },
   computed: {

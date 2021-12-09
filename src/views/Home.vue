@@ -7,6 +7,10 @@
             :title="character.name"
             :imageUrl="character.imageUrl"
             :movies="character.films"
+            :shortFilms="character.shortFilms"
+            :tvShows="character.tvShows"
+            :videoGames="character.videoGames"
+            :parkAttractions="character.parkAttractions"
           />
         </v-col>
       </v-row>

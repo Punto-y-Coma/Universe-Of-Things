@@ -16,10 +16,19 @@
           />
         </v-flex>
         <v-flex xs4 lg5></v-flex>
-        <v-flex class="white--text d-flex justify-center align-center" xs4 lg2>
-          <v-flex d-flex justify-end mr-2> Personajes </v-flex>
+        <v-flex
+          id="flexLinksContainer"
+          class="white--text d-flex justify-center align-center"
+          xs4
+          lg2
+        >
+          <v-flex d-flex justify-end mr-2>
+            <router-link to="/"> Personajes </router-link>
+          </v-flex>
           <div>|</div>
-          <v-flex d-flex justify-start ml-2> Favoritos </v-flex>
+          <v-flex d-flex justify-start ml-2>
+            <router-link to="/favorites"> Favoritos </router-link>
+          </v-flex>
         </v-flex>
         <v-flex class="d-flex justify-end" xs4 lg5>
           <v-btn
@@ -91,3 +100,17 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#flexLinksContainer a.router-link-exact-active {
+  font-weight: bolder;
+  text-decoration: underline 3px;
+  font-size: 14pt;
+}
+
+#flexLinksContainer a {
+  color: white;
+  text-decoration: none;
+  font-size: 12pt;
+}
+</style>

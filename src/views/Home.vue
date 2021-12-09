@@ -1,5 +1,10 @@
 <template>
   <v-app id="inspire" style="background: #212121">
+    <v-container fluid ma-0>
+      <v-row>
+        <banner />
+      </v-row>
+    </v-container>
     <v-container>
       <v-row>
         <v-col v-for="character in characters" :key="character.id" xs6 md4 lg3>

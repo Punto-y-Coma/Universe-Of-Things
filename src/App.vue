@@ -30,15 +30,6 @@
             <router-link to="/favorites"> Favoritos </router-link>
           </v-flex>
         </v-flex>
-        <v-flex class="d-flex justify-end" xs4 lg5>
-          <v-btn
-            href="https://github.com/vuetifyjs/vuetify/releases/latest"
-            target="_blank"
-            text
-          >
-            <v-icon color="white">mdi-magnify</v-icon>
-          </v-btn>
-        </v-flex>
       </v-layout>
     </v-app-bar>
 

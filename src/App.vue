@@ -70,9 +70,7 @@
 export default {
   name: "App",
 
-  data: () => ({
-    //
-  }),
+  data: () => ({}),
   mounted() {},
   methods: {
     loadDisneyAPI() {
@@ -83,10 +81,6 @@ export default {
           this.products = data;
           console.log(this.products);
         });
-      // fetch(url)
-      //   .then((response) => response.json())
-      //   .then((data) => (this.totalVuePackages = data.total));
-      // console.log("testestestestestestestest");
     },
   },
 };

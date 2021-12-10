@@ -44,13 +44,6 @@
         <v-divider></v-divider>
 
         <v-card-text style="max-width: 14em" class="more-info-text">
-          <!-- <apiListingMoreInfo
-            :movies="movies"
-            :shortFilms="shortFilms"
-            :tvShows="tvShows"
-            :videoGames="videoGames"
-            :parkAttractions="parkAttractions"
-          /> -->
           <v-card>
             <v-list-item v-if="checkArrayLenght(movies)">
               <v-list-item-content>
@@ -120,22 +113,11 @@
 </template>
 
 <script>
-// import apiListingMoreInfo from "../components/apiListingMoreInfo";
 export default {
   data: () => ({
     show: false,
     favourite: false,
-    // return: {
-    //   movies: [],
-    //   shortFilms: [],
-    //   tvShows: [],
-    //   videoGames: [],
-    //   parkAttractions: [],
-    // },
   }),
-  // components: {
-  //   apiListingMoreInfo,
-  // },
   props: {
     title: {
       type: String,

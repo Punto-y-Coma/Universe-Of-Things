@@ -69,20 +69,7 @@
 <script>
 export default {
   name: "App",
-
   data: () => ({}),
-  mounted() {},
-  methods: {
-    loadDisneyAPI() {
-      var url = "https://api.npms.io/v2/search?q=vue";
-      return fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-          this.products = data;
-          console.log(this.products);
-        });
-    },
-  },
 };
 </script>
 
